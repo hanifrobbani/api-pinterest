@@ -1,0 +1,235 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Pinterest API Documentation",
+        "description": "All documentation for using Pinterest API",
+        "contact": {
+            "email": "mhanifrobbani51@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Posts API"
+                ],
+                "summary": "Get list of posts",
+                "operationId": "c4140bba6f2fd970c14823b3352f247d",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "no post yet"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Posts API"
+                ],
+                "summary": "Creating a post",
+                "operationId": "fb46778f68d3a0f5e7973d8981a64cbf",
+                "responses": {
+                    "200": {
+                        "description": "post created successfully"
+                    },
+                    "422": {
+                        "description": "Error creating post"
+                    }
+                }
+            }
+        },
+        "/api/post/{post}": {
+            "get": {
+                "tags": [
+                    "Posts API"
+                ],
+                "summary": "Get specific post by id",
+                "operationId": "b892af27447079e7deb071c31071d8eb",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "no post found"
+                    }
+                }
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "Users API"
+                ],
+                "summary": "Get list of all users",
+                "operationId": "36387f01cad8ad0c46daaf87bc518ce8",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "No user found"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Users API"
+                ],
+                "summary": "Resgiter user",
+                "operationId": "8e4e3cb7b46126f4696379d3c7eeb4ad",
+                "responses": {
+                    "200": {
+                        "description": "User created successfully"
+                    },
+                    "422": {
+                        "description": "Error creating user"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Users API"
+                ],
+                "summary": "Authenticate user",
+                "operationId": "222b2625838e3c57e017987f73598fda",
+                "responses": {
+                    "200": {
+                        "description": "Login successfully"
+                    },
+                    "422": {
+                        "description": "Username or password incorrect"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Users API"
+                ],
+                "summary": "Logout user",
+                "operationId": "ad65cbbd4e9f201619eae184a5961a98",
+                "responses": {
+                    "200": {
+                        "description": "Logout successfully"
+                    },
+                    "422": {
+                        "description": "Error can't logout"
+                    }
+                }
+            }
+        },
+        "/api/post/{post_id}/comment": {
+            "get": {
+                "tags": [
+                    "Comment API"
+                ],
+                "summary": "Get comment user by post id",
+                "operationId": "25a8ac41c010982c447edc4a9e5918d3",
+                "responses": {
+                    "200": {
+                        "description": "Fetch comment"
+                    },
+                    "422": {
+                        "description": "No comment found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Comment API"
+                ],
+                "summary": "Create comment",
+                "operationId": "6a422695eddd12be650a1282db8a1e58",
+                "responses": {
+                    "200": {
+                        "description": "Comment added successfully"
+                    },
+                    "422": {
+                        "description": "Error, can't create comment"
+                    }
+                }
+            }
+        },
+        "/api/allcomments": {
+            "get": {
+                "tags": [
+                    "Comment API"
+                ],
+                "summary": "Get all comment user",
+                "operationId": "b2bc580f27e4cf59f70045a1f4cb5665",
+                "responses": {
+                    "200": {
+                        "description": "Fetch all comment"
+                    },
+                    "422": {
+                        "description": "No comment found"
+                    }
+                }
+            }
+        },
+        "/post/{postId}/like": {
+            "post": {
+                "tags": [
+                    "Like API"
+                ],
+                "summary": "Creating like for specific post",
+                "operationId": "693e5770dda6eadde9a35e74621651ca",
+                "responses": {
+                    "200": {
+                        "description": "Like created successfully"
+                    },
+                    "422": {
+                        "description": "Error can't adding like"
+                    }
+                }
+            }
+        },
+        "/post/{postId}/likes": {
+            "get": {
+                "tags": [
+                    "Like API"
+                ],
+                "summary": "Get number of like",
+                "operationId": "ae2149ff9e87ccf5a5be28fd07c86efe",
+                "responses": {
+                    "200": {
+                        "description": "Like fetch successfully"
+                    },
+                    "422": {
+                        "description": "Error can't fetch data like"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Posts API",
+            "description": "Posts API"
+        },
+        {
+            "name": "Users API",
+            "description": "Users API"
+        },
+        {
+            "name": "Comment API",
+            "description": "Comment API"
+        },
+        {
+            "name": "Like API",
+            "description": "Like API"
+        }
+    ]
+}
